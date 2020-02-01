@@ -9,7 +9,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <p>React is working. Congration you done it</p>
         <Box />
       </div>
     );
