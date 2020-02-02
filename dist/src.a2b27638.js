@@ -37271,27 +37271,27 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Container = _styledComponents.default.div.withConfig({
-  displayName: "Box__Container",
+var Fill = _styledComponents.default.div.withConfig({
+  displayName: "Box__Fill",
   componentId: "sc-44tix4-0"
-})(["width:100%;height:300px;display:flex;justify-content:flex-end;align-items:flex-end;"]);
-
-var BoxFill = _styledComponents.default.div.withConfig({
-  displayName: "Box__BoxFill",
-  componentId: "sc-44tix4-1"
-})(["background-color:", ";@keyframes fillUp{from{width:0%;}to{width:100%;}}height:100%;animation-name:fillUp;animation-duration:3s;animation-fill-mode:forwards;"], function (props) {
+})(["background-color:", ";@keyframes fillUp{from{width:0%;}to{width:100%;}}height:300px;position:absolute;top:0px;z-index:-1;animation-name:fillUp;animation-duration:2s;animation-fill-mode:forwards;"], function (props) {
   return props.color;
 });
 
-var TestP = _styledComponents.default.p.withConfig({
-  displayName: "Box__TestP",
+var Container = _styledComponents.default.div.withConfig({
+  displayName: "Box__Container",
+  componentId: "sc-44tix4-1"
+})(["width:100%;height:300px;display:flex;justify-content:flex-end;align-items:flex-end;"]);
+
+var GreetingText = _styledComponents.default.p.withConfig({
+  displayName: "Box__GreetingText",
   componentId: "sc-44tix4-2"
-})(["color:#f2f2f2;font-family:Raleway,Helvetica,sans-serif;font-size:30px;margin:0 10px 10px 0;"]);
+})(["color:#f2f2f2;font-weight:bold;font-family:Raleway,Helvetica,sans-serif;font-size:35px;margin:0 15px 15px 0;"]);
 
 var Box = function Box() {
-  return _react.default.createElement("div", null, _react.default.createElement(Container, null, _react.default.createElement(BoxFill, {
+  return _react.default.createElement("div", null, _react.default.createElement(Fill, {
     color: "#F24E29"
-  })));
+  }), _react.default.createElement(Container, null, _react.default.createElement(GreetingText, null, "hello there.")));
 };
 
 var _default = Box;
