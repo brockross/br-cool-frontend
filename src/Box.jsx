@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Fill = styled.div`
-  background-color: ${props => props.color};
+  background-color: ${props => props.theme.scarlet};
   @keyframes fillUp {
     from {
       width: 0%;
@@ -27,7 +27,7 @@ const Container = styled.div`
   align-items: flex-end;
 `;
 const GreetingText = styled.p`
-  color: #f2f2f2;
+  color: ${props => props.theme.offWhite};
   font-weight: bold;
   font-family: Raleway, Helvetica, sans-serif;
   font-size: 35px;
@@ -36,7 +36,7 @@ const GreetingText = styled.p`
 const Box = () => {
   return (
     <div>
-      <Fill color={"#F24E29"} />
+      <Fill />
       <Container>
         <GreetingText>hello there.</GreetingText>
       </Container>
