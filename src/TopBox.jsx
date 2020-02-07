@@ -11,7 +11,7 @@ const Fill = styled.div`
       width: 100%;
     }
   }
-  height: 300px;
+  height: ${props => props.theme.mobileHeight};
   position: absolute;
   top: 0px;
   z-index: -1;
@@ -21,7 +21,7 @@ const Fill = styled.div`
 `;
 const Container = styled.div`
   width: 100%;
-  height: 300px;
+  height: ${props => props.theme.mobileHeight};
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -29,19 +29,19 @@ const Container = styled.div`
 const GreetingText = styled.p`
   color: ${props => props.theme.offWhite};
   font-weight: bold;
-  font-family: Raleway, Helvetica, sans-serif;
+  font-family: ${props => props.theme.fontMain};
   font-size: 35px;
   margin: 0 15px 15px 0;
 `;
-const Box = () => {
+const TopBox = () => {
   return (
     <div>
       <Fill />
       <Container>
-        <GreetingText>hello there.</GreetingText>
+        <GreetingText>hey there.</GreetingText>
       </Container>
     </div>
   );
 };
 
-export default Box;
+export default TopBox;

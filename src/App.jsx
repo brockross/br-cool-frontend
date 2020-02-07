@@ -1,13 +1,19 @@
 import React from "react";
-import Box from "./Box";
 import styled, { ThemeProvider } from "styled-components";
+
+import TopBox from "./TopBox";
+import IntroBlock from "./IntroBlock";
+import AboutThisAppBlock from "./AboutThisAppBlock";
 
 const theme = {
   scarlet: "#F24E29",
-  turq: "#89D9BB",
+  turq: "#89d9bb",
   sand: "#D9C49C",
   crimson: "#BF2E21",
-  offWhite: "#F2F2F2"
+  offWhite: "#F2F2F2",
+  fontMain: "Raleway",
+  mobileHeight: "300px",
+  desktopHeight: "600px"
 };
 
 class App extends React.Component {
@@ -18,7 +24,9 @@ class App extends React.Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <Box />
+        <TopBox />
+        <IntroBlock />
+        <AboutThisAppBlock />
       </ThemeProvider>
     );
   }
