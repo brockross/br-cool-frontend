@@ -1,0 +1,20 @@
+/* Color Theme Swatches in Hex */
+.Props---Tlingit-1-hex { color: #89D9BB; }
+.Props---Tlingit-2-hex { color: #D9C49C; }
+.Props---Tlingit-3-hex { color: #F24E29; }
+.Props---Tlingit-4-hex { color: #BF2E21; }
+.Props---Tlingit-5-hex { color: #F2F2F2; }
+
+/* Color Theme Swatches in RGBA */
+.Props---Tlingit-1-rgba { color: rgba(136, 216, 187, 1); }
+.Props---Tlingit-2-rgba { color: rgba(216, 195, 156, 1); }
+.Props---Tlingit-3-rgba { color: rgba(242, 78, 41, 1); }
+.Props---Tlingit-4-rgba { color: rgba(191, 45, 32, 1); }
+.Props---Tlingit-5-rgba { color: rgba(242, 242, 242, 1); }
+
+/* Color Theme Swatches in HSLA */
+.Props---Tlingit-1-hsla { color: hsla(157, 51, 69, 1); }
+.Props---Tlingit-2-hsla { color: hsla(39, 44, 73, 1); }
+.Props---Tlingit-3-hsla { color: hsla(11, 88, 55, 1); }
+.Props---Tlingit-4-hsla { color: hsla(5, 70, 43, 1); }
+.Props---Tlingit-5-hsla { color: hsla(0, 0, 95, 1); }
