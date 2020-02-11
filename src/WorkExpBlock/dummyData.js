@@ -6,7 +6,7 @@ const mockResponse = [
     shortSummary:
       "20+ year tech-centric online corporation. Working on content team (articles/exercises)",
     bullets: [
-      "Use Javascript, Node, React, HTML/CSS, Angular, AWS Lambdas, several templating languages, and more",
+      "Use Javascript, Node, React, HTML/CSS, Angular, AWS, server-side templating languages, and more",
       "Manage, maintain, and iterate upon an enterprise-level custom CMS architecture--from templates/CSS/JS on the front end, to node publishing apps on the back end",
       "Recently implemented paywall mechanism for all site content, using SSI with nginx to parse free/paywalled content in-page",
       "Scrum/agile workflow, remote majority of the time",

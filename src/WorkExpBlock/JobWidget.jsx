@@ -3,16 +3,18 @@ import styled from "styled-components";
 
 const Container = styled.div`
   width: 100%;
-  background-color: ${props => props.theme.scarletDark};
+  background-color: ${props => props.theme.scarlet};
   font-family: ${props => props.theme.fontMain};
-  border: 2px solid;
-  border-color: ${props => props.theme.charcoal};
+  padding: 10px 0px;
 `;
 
 const DeetsContainer = styled.div`
-  display: ${props => (props.isExpanded ? "block" : "none")};
+  display: ${props => (props.isExpanded ? "flex" : "none")};
+  background-color: ${props => props.theme.scarletDark};
   color: ${props => props.theme.offWhite};
   width: 100%;
+  border-bottom: 3px solid;
+  border-color: ${props => props.theme.charcoal};
 `;
 
 class JobWidget extends React.Component {
@@ -36,14 +38,16 @@ class JobWidget extends React.Component {
 
     return (
       <Container>
-        <h3 onClick={() => this.toggle()}>
-          {jobData.company}&nbsp;
-          {isExpanded ? "-" : "+"}
-        </h3>
+        <h4>
+          {jobData.company} | {jobData.jobTitle} | {jobData.timespan}
+        </h4>
+        <p>
+          <em>{jobData.shortSummary}</em>&nbsp;
+          <span onClick={() => this.toggle()}>
+            {isExpanded ? "[--]" : "[++]"}
+          </span>
+        </p>
         <DeetsContainer isExpanded={isExpanded}>
-          <p>
-            {jobData.jobTitle} | {jobData.timespan}
-          </p>
           <ul>
             {jobData.bullets.map(item => {
               return <li>{item}</li>;
