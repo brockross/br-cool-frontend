@@ -31,6 +31,7 @@ class App extends React.Component {
       <ThemeProvider theme={theme}>
         <TopBox />
         <IntroBlock />
+        <ToCBlock />
         <SkillsBlock />
         <AboutThisAppBlock />
         <WorkExpBlock />

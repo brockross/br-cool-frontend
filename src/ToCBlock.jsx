@@ -1,39 +1,55 @@
 import React from "react";
 import styled from "styled-components";
 
-const Container = styled.div`
+const BlockContainer = styled.div`
   width: 100%;
-  height: ${props => props.theme.mobileHeight};
-  background-color: ${props => props.theme.sand};
+  background-color: ${props => props.theme.offWhite};
   display: flex;
   align-items: center;
+  justify-content: center;
 `;
-
-const TextBox = styled.div`
-  width: 80%;
-  background-color: ${props => props.theme.offWhite};
-  font-family: ${props => props.theme.fontMain};
-  font-size: 20px;
-  padding: 10px;
-  border-radius: 0 5px 5px 0;
+const FaceContainer = styled.div`
+  border: 2px solid charcoal;
+  width: 400px;
+  height: 800px;
+  position: relative;
 `;
-
-const sections = [
-  "About This App",
-  "Stuff I'm Good At",
-  "Work Experience",
-  "But Who Am I, Really?"
-];
+const Head = styled.img`
+  width: 100%;
+  position: absolute;
+`;
+const EyesOpen = styled.img`
+  width: 100%;
+  position: absolute;
+  display: ${props => (props.open ? "block" : "none")};
+`;
+const EyesClosed = styled.img`
+  width: 100%;
+  position: absolute;
+  display: ${props => (props.open ? "none" : "block")};
+`;
 
 const ToCBlock = () => {
+  const [eyesOpen, setEyes] = React.useState(true);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setEyes(false);
+      setTimeout(() => {
+        setEyes(true);
+      }, 350);
+    }, 4000);
+    return () => clearInterval(interval);
+  });
+
   return (
-    <Container>
-      <TextBox>
-        {sections.map((title, idx) => {
-          return <p key={idx}># {title.toUpperCase()}</p>;
-        })}
-      </TextBox>
-    </Container>
+    <BlockContainer>
+      <FaceContainer>
+        <EyesOpen src={"./imgs/eyes-open.png"} open={eyesOpen}></EyesOpen>
+        <EyesClosed src={"./imgs/eyes-closed.png"} open={eyesOpen}></EyesClosed>
+        <Head src={"./imgs/face-no-eyes.png"}></Head>
+      </FaceContainer>
+    </BlockContainer>
   );
 };
 
