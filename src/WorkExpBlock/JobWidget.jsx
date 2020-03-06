@@ -5,16 +5,18 @@ const Container = styled.div`
   width: 100%;
   background-color: ${props => props.theme.scarlet};
   font-family: ${props => props.theme.fontMain};
-  padding: 10px 0px;
+  padding: 10px 20px;
 `;
 
 const DeetsContainer = styled.div`
   display: ${props => (props.isExpanded ? "flex" : "none")};
-  background-color: ${props => props.theme.scarletDark};
+  /* background-color: ${props => props.theme.scarletDark}; */
+  background: linear-gradient(#F24E29, #ab371d);
   color: ${props => props.theme.offWhite};
   width: 100%;
-  border-bottom: 3px solid;
-  border-color: ${props => props.theme.charcoal};
+  /* border: 2px solid;
+  border-color: hsla(11, 88%, 55%, 0.5); */
+  padding: 5px;
 `;
 
 class JobWidget extends React.Component {
@@ -49,8 +51,8 @@ class JobWidget extends React.Component {
         </p>
         <DeetsContainer isExpanded={isExpanded}>
           <ul>
-            {jobData.bullets.map(item => {
-              return <li>{item}</li>;
+            {jobData.bullets.map((item, idx) => {
+              return <li key={idx}>{item}</li>;
             })}
           </ul>
         </DeetsContainer>

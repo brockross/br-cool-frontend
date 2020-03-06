@@ -11,6 +11,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 100px 0px;
 `;
 const Title = styled.h3`
   text-align: center;
@@ -26,10 +27,10 @@ class WorkExpBlock extends React.Component {
 
   render() {
     return (
-      <Container>
-        <Title>JOBS I HAVE DONE OR AM DOING</Title>
+      <Container id={"WorkExpBlock"}>
+        <Title>WORK</Title>
         {this.state.workExperience.map(job => {
-          return <JobWidget jobData={job} />;
+          return <JobWidget jobData={job} key={job.company} />;
         })}
       </Container>
     );

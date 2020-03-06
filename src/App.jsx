@@ -3,7 +3,7 @@ import styled, { ThemeProvider } from "styled-components";
 
 import TopBox from "./TopBox";
 import IntroBlock from "./IntroBlock";
-import ToCBlock from "./ToCBlock";
+import ToCBlock from "./ToCBlock/ToCBlock";
 import SkillsBlock from "./SkillsBlock";
 import WorkExpBlock from "./WorkExpBlock/WorkExpBlock";
 import AboutThisAppBlock from "./AboutThisAppBlock";
