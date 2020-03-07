@@ -11,7 +11,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 100px 0px;
+  padding: 130px 0px;
 `;
 const Title = styled.h3`
   text-align: center;

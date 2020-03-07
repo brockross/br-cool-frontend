@@ -39,24 +39,29 @@ class JobWidget extends React.Component {
     const { isExpanded } = this.state;
 
     return (
-      <Container>
-        <h4>
-          {jobData.company} | {jobData.jobTitle} | {jobData.timespan}
-        </h4>
-        <p>
-          <em>{jobData.shortSummary}</em>&nbsp;
-          <span onClick={() => this.toggle()}>
-            {isExpanded ? "[--]" : "[++]"}
-          </span>
-        </p>
+      <div>
+        <Container>
+          <h4>
+            {jobData.company} | {jobData.jobTitle} | {jobData.timespan}
+          </h4>
+          <p>
+            <em>{jobData.shortSummary}</em>&nbsp;
+            <span onClick={() => this.toggle()}>
+              {isExpanded ? "[--]" : "[++]"}
+            </span>
+          </p>
+        </Container>
         <DeetsContainer isExpanded={isExpanded}>
           <ul>
             {jobData.bullets.map((item, idx) => {
               return <li key={idx}>{item}</li>;
             })}
+            <span onClick={() => this.toggle()}>
+              {isExpanded ? "[--]" : "[++]"}
+            </span>
           </ul>
         </DeetsContainer>
-      </Container>
+      </div>
     );
   }
 }
