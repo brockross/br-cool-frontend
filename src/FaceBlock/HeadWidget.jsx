@@ -14,15 +14,22 @@ const Head = styled.img`
 const EyesOpen = styled.img`
   width: 100%;
   position: absolute;
-  display: ${props => (props.open ? "block" : "none")};
+  display: ${(props) => (props.open ? "block" : "none")};
 `;
 const EyesClosed = styled.img`
   width: 100%;
   position: absolute;
-  display: ${props => (props.open ? "none" : "block")};
+  display: ${(props) => (props.open ? "none" : "block")};
 `;
 
 const HeadWidget = () => {
+  const imgs = {
+    eyesClosed:
+      "https://brockross-cool.s3-us-west-2.amazonaws.com/eyes-closed.png",
+    eyesOpen: "https://brockross-cool.s3-us-west-2.amazonaws.com/eyes-open.png",
+    faceNoEyes:
+      "https://brockross-cool.s3-us-west-2.amazonaws.com/face-no-eyes.png",
+  };
   const [eyesOpen, setEyes] = useState(true);
 
   useEffect(() => {
@@ -37,9 +44,9 @@ const HeadWidget = () => {
 
   return (
     <FaceContainer>
-      <EyesOpen src={"./imgs/eyes-open.png"} open={eyesOpen}></EyesOpen>
-      <EyesClosed src={"./imgs/eyes-closed.png"} open={eyesOpen}></EyesClosed>
-      <Head src={"./imgs/face-no-eyes.png"}></Head>
+      <EyesOpen src={imgs.eyesOpen} open={eyesOpen}></EyesOpen>
+      <EyesClosed src={imgs.eyesClosed} open={eyesOpen}></EyesClosed>
+      <Head src={imgs.faceNoEyes}></Head>
     </FaceContainer>
   );
 };
