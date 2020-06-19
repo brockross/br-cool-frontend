@@ -3,10 +3,7 @@ import styled, { ThemeProvider } from "styled-components";
 
 import TopBox from "./TopBox";
 import IntroBlock from "./IntroBlock";
-import ToCBlock from "./ToCBlock";
-import SkillsBlock from "./SkillsBlock";
-import WorkExpBlock from "./WorkExpBlock/WorkExpBlock";
-import AboutThisAppBlock from "./AboutThisAppBlock";
+import FaceBlock from "./FaceBlock/FaceBlock";
 
 const theme = {
   scarlet: "#F24E29",
@@ -18,26 +15,17 @@ const theme = {
   charcoal: "#262626",
   fontMain: "Raleway",
   mobileHeight: "300px",
-  desktopHeight: "600px"
+  desktopHeight: "600px",
 };
 
-class App extends React.Component {
-  constructor() {
-    super();
-  }
-
-  render() {
-    return (
-      <ThemeProvider theme={theme}>
-        <TopBox />
-        <IntroBlock />
-        <SkillsBlock />
-        <AboutThisAppBlock />
-        <WorkExpBlock />
-        <AboutThisAppBlock />
-      </ThemeProvider>
-    );
-  }
-}
+const App = (props) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <TopBox />
+      <IntroBlock />
+      <FaceBlock />
+    </ThemeProvider>
+  );
+};
 
 export default App;
