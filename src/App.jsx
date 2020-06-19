@@ -5,6 +5,7 @@ import TopBox from "./TopBox";
 import IntroBlock from "./IntroBlock";
 import ToCBlock from "./ToCBlock/ToCBlock";
 import SkillsBlock from "./SkillsBlock";
+import PortfolioBlock from "./PortfolioBlock/PortfolioBlock";
 import WorkExpBlock from "./WorkExpBlock/WorkExpBlock";
 import AboutThisAppBlock from "./AboutThisAppBlock";
 
@@ -33,9 +34,8 @@ class App extends React.Component {
         <IntroBlock />
         <ToCBlock />
         <SkillsBlock />
-        <AboutThisAppBlock />
+        <PortfolioBlock />
         <WorkExpBlock />
-        <AboutThisAppBlock />
       </ThemeProvider>
     );
   }

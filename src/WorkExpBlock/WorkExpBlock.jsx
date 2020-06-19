@@ -13,7 +13,7 @@ const Container = styled.div`
   justify-content: space-between;
   padding: 130px 0px;
 `;
-const Title = styled.h3`
+const Title = styled.h2`
   text-align: center;
 `;
 class WorkExpBlock extends React.Component {

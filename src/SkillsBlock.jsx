@@ -68,8 +68,8 @@ const SkillsBlock = () => {
       <Heading>SKILLS</Heading>
       <span>
         <em>
-          bowhunting skills... computer hacking skills... girls only want
-          boyfriends with good skills
+          nunchuck skills... bowhunting skills... computer hacking skills...
+          girls only want boyfriends who have great skills
         </em>
       </span>
       <p>

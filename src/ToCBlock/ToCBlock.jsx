@@ -35,7 +35,6 @@ const ToCBlock = () => {
       <TocItem href={"#SkillsBlock"}># MY SKILLS</TocItem>
       <TocItem href={"#"}># STUFF I'VE MADE</TocItem>
       <TocItem href={"#WorkExpBlock"}># WORK EXPERIENCE</TocItem>
-      <TocItem href={"#"}># ABOUT THIS APP</TocItem>
       <TocItem href={"#"}># BUT WHO AM I, REALLY</TocItem>
     </BlockContainer>
   );
