@@ -9,8 +9,28 @@ const BlockContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-bottom: 100px;
+
+  @media (min-width: 500px) {
+    flex-direction: row;
+    justify-content: center;
+  }
+`;
+
+const MenuContainer = styled.nav`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  @media (min-width: 500px) {
+    align-items: flex-start;
+    justify-content: center;
+    width: 300px;
+    padding-left: 75px;
+  }
 `;
 
 const MenuItem = styled.a`
@@ -22,9 +42,11 @@ const MenuItem = styled.a`
   letter-spacing: normal;
   transition: letter-spacing 0.5s;
 
-  &:hover {
-    color: ${(props) => props.theme.turq};
-    letter-spacing: 3px;
+  @media (min-width: 500px) {
+    &:hover {
+      color: ${(props) => props.theme.turq};
+      letter-spacing: 3px;
+    }
   }
 `;
 
@@ -32,14 +54,14 @@ const FaceBlock = () => {
   return (
     <BlockContainer>
       <HeadWidget />
-      <MenuItem href={"https://www.linkedin.com/in/mbrockross/"}>
-        LINKEDIN
-      </MenuItem>
-      <MenuItem href={"https://github.com/brockross"}>GITHUB</MenuItem>
-      <MenuItem href={"#"}>RESUME</MenuItem>
-      <MenuItem href={"mailto:m.brock.ross@gmail.com"}>
-        SEND ME A MESSAGE
-      </MenuItem>
+      <MenuContainer>
+        <MenuItem href={"https://www.linkedin.com/in/mbrockross/"}>
+          LINKEDIN
+        </MenuItem>
+        <MenuItem href={"https://github.com/brockross"}>GITHUB</MenuItem>
+        <MenuItem href={"#"}>RESUME</MenuItem>
+        <MenuItem href={"mailto:m.brock.ross@gmail.com"}>CONTACT</MenuItem>
+      </MenuContainer>
     </BlockContainer>
   );
 };
