@@ -7,7 +7,7 @@ const BlockContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 200px 0;
+  padding: 200px 20px;
 
   @media (min-width: 500px) {
     padding-top: 150px;
