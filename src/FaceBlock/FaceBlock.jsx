@@ -33,7 +33,7 @@ const MenuContainer = styled.nav`
   @media (min-width: 500px) {
     align-items: flex-start;
     justify-content: center;
-    width: 300px;
+    width: 340px;
     padding-left: 75px;
   }
 `;
