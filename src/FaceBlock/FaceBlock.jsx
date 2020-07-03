@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import ClipboardJS from "clipboard";
 
 import HeadWidget from "./HeadWidget";
 import ClipboardPop from "./ClipboardPop";
@@ -27,7 +28,7 @@ const MenuContainer = styled.nav`
   width: 100%;
   font-family: ${(props) => props.theme.fontMain};
   color: ${(props) => props.theme.charcoal};
-  font-size: 24px;
+  font-size: 28px;
 
   @media (min-width: 500px) {
     align-items: flex-start;
@@ -59,16 +60,11 @@ const ContactItem = styled(MenuLink)`
 `;
 
 const FaceBlock = () => {
+  new ClipboardJS("#eml");
   const [showClipboardPop, updateShowClipboardPop] = useState(false);
 
   const handleContactClick = () => {
-    navigator.clipboard
-      .writeText("m.brock.ross@gmail.com")
-      .then(() => {
-        updateShowClipboardPop(true);
-        console.log("successfully copied");
-      })
-      .catch((err) => console.error(err));
+    updateShowClipboardPop(true);
   };
 
   return (
@@ -86,7 +82,12 @@ const FaceBlock = () => {
         >
           RESUME
         </MenuLink>
-        <ContactItem as="p" onClick={handleContactClick}>
+        <ContactItem
+          id={"eml"}
+          as="p"
+          data-clipboard-text={"m.brock.ross@gmail.com"}
+          onClick={handleContactClick}
+        >
           GRAB MY EMAIL
         </ContactItem>
         <ClipboardPop show={showClipboardPop} />
