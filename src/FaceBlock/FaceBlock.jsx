@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import HeadWidget from "./HeadWidget";
+import ClipboardPop from "./ClipboardPop";
 
 const BlockContainer = styled.div`
   width: 100%;
@@ -24,6 +25,9 @@ const MenuContainer = styled.nav`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  font-family: ${(props) => props.theme.fontMain};
+  color: ${(props) => props.theme.charcoal};
+  font-size: 24px;
 
   @media (min-width: 500px) {
     align-items: flex-start;
@@ -33,10 +37,8 @@ const MenuContainer = styled.nav`
   }
 `;
 
-const MenuItem = styled.a`
-  font-family: ${(props) => props.theme.fontMain};
+const MenuLink = styled.a`
   color: ${(props) => props.theme.charcoal};
-  font-size: 24px;
   text-decoration: none;
   margin: 5px 0;
   letter-spacing: normal;
@@ -50,17 +52,44 @@ const MenuItem = styled.a`
   }
 `;
 
+const ContactItem = styled(MenuLink)`
+  @media (min-width: 500px) {
+    cursor: cell;
+  }
+`;
+
 const FaceBlock = () => {
+  const [showClipboardPop, updateShowClipboardPop] = useState(false);
+
+  const handleContactClick = () => {
+    navigator.clipboard
+      .writeText("m.brock.ross@gmail.com")
+      .then(() => {
+        updateShowClipboardPop(true);
+        console.log("successfully copied");
+      })
+      .catch((err) => console.error(err));
+  };
+
   return (
     <BlockContainer>
       <HeadWidget />
       <MenuContainer>
-        <MenuItem href={"https://www.linkedin.com/in/mbrockross/"}>
+        <MenuLink href={"https://www.linkedin.com/in/mbrockross/"}>
           LINKEDIN
-        </MenuItem>
-        <MenuItem href={"https://github.com/brockross"}>GITHUB</MenuItem>
-        <MenuItem href={"#"}>RESUME</MenuItem>
-        <MenuItem href={"mailto:m.brock.ross@gmail.com"}>CONTACT</MenuItem>
+        </MenuLink>
+        <MenuLink href={"https://github.com/brockross"}>GITHUB</MenuLink>
+        <MenuLink
+          href={
+            "https://brockross-cool.s3-us-west-2.amazonaws.com/brock-ross-software-engineer-resume.pdf"
+          }
+        >
+          RESUME
+        </MenuLink>
+        <ContactItem as="p" onClick={handleContactClick}>
+          GRAB MY EMAIL
+        </ContactItem>
+        <ClipboardPop show={showClipboardPop} />
       </MenuContainer>
     </BlockContainer>
   );
