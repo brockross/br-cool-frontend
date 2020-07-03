@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import HeadWidget from "./HeadWidget";
+import ClipboardPop from "./ClipboardPop";
 
 const BlockContainer = styled.div`
   width: 100%;
@@ -9,37 +10,87 @@ const BlockContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-bottom: 100px;
+
+  @media (min-width: 500px) {
+    flex-direction: row;
+    justify-content: center;
+  }
 `;
 
-const MenuItem = styled.a`
+const MenuContainer = styled.nav`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
   font-family: ${(props) => props.theme.fontMain};
   color: ${(props) => props.theme.charcoal};
   font-size: 24px;
+
+  @media (min-width: 500px) {
+    align-items: flex-start;
+    justify-content: center;
+    width: 300px;
+    padding-left: 75px;
+  }
+`;
+
+const MenuLink = styled.a`
+  color: ${(props) => props.theme.charcoal};
   text-decoration: none;
   margin: 5px 0;
   letter-spacing: normal;
   transition: letter-spacing 0.5s;
 
-  &:hover {
-    color: ${(props) => props.theme.turq};
-    letter-spacing: 3px;
+  @media (min-width: 500px) {
+    &:hover {
+      color: ${(props) => props.theme.turq};
+      letter-spacing: 3px;
+    }
+  }
+`;
+
+const ContactItem = styled(MenuLink)`
+  @media (min-width: 500px) {
+    cursor: cell;
   }
 `;
 
 const FaceBlock = () => {
+  const [showClipboardPop, updateShowClipboardPop] = useState(false);
+
+  const handleContactClick = () => {
+    navigator.clipboard
+      .writeText("m.brock.ross@gmail.com")
+      .then(() => {
+        updateShowClipboardPop(true);
+        console.log("successfully copied");
+      })
+      .catch((err) => console.error(err));
+  };
+
   return (
     <BlockContainer>
       <HeadWidget />
-      <MenuItem href={"https://www.linkedin.com/in/mbrockross/"}>
-        LINKEDIN
-      </MenuItem>
-      <MenuItem href={"https://github.com/brockross"}>GITHUB</MenuItem>
-      <MenuItem href={"#"}>RESUME</MenuItem>
-      <MenuItem href={"mailto:m.brock.ross@gmail.com"}>
-        SEND ME A MESSAGE
-      </MenuItem>
+      <MenuContainer>
+        <MenuLink href={"https://www.linkedin.com/in/mbrockross/"}>
+          LINKEDIN
+        </MenuLink>
+        <MenuLink href={"https://github.com/brockross"}>GITHUB</MenuLink>
+        <MenuLink
+          href={
+            "https://brockross-cool.s3-us-west-2.amazonaws.com/brock-ross-software-engineer-resume.pdf"
+          }
+        >
+          RESUME
+        </MenuLink>
+        <ContactItem as="p" onClick={handleContactClick}>
+          GRAB MY EMAIL
+        </ContactItem>
+        <ClipboardPop show={showClipboardPop} />
+      </MenuContainer>
     </BlockContainer>
   );
 };

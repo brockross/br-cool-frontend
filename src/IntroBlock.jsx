@@ -3,12 +3,18 @@ import styled from "styled-components";
 
 const BlockContainer = styled.div`
   width: 100%;
-  height: ${props => props.theme.mobileHeight};
-  background-color: ${props => props.theme.offWhite};
+  background-color: ${(props) => props.theme.offWhite};
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 200px 0;
+  padding: 200px 20px;
+
+  @media (min-width: 500px) {
+    padding-top: 150px;
+    padding-bottom: 50px;
+    padding-left: 27%;
+    padding-right: 27%;
+  }
 `;
 const Heading = styled.p`
   @keyframes fadeIn {
@@ -19,7 +25,7 @@ const Heading = styled.p`
       opacity: 1;
     }
   }
-  font-family: ${props => props.theme.fontMain};
+  font-family: ${(props) => props.theme.fontMain};
   font-size: 22px;
   margin: 0 20px;
   animation-name: fadeIn;
@@ -30,7 +36,12 @@ const Heading = styled.p`
 const IntroBlock = () => {
   return (
     <BlockContainer>
-      <Heading>I'm Brock. Great to meet you.</Heading>
+      <Heading>
+        I'm Brock. I currently work at Bodybuilding.com as a full-stack
+        engineer, building APIs and user interfaces alike. I'm proficient in
+        React, Node, Mongo, and more.
+        <p>Great to meet you.</p>
+      </Heading>
     </BlockContainer>
   );
 };
