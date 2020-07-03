@@ -11,12 +11,12 @@ const BlockContainer = styled.div`
 
   @media (min-width: 500px) {
     padding-top: 150px;
-    padding-bottom: 50px;
+    padding-bottom: 100px;
     padding-left: 27%;
     padding-right: 27%;
   }
 `;
-const Heading = styled.p`
+const TextBox = styled.div`
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -36,12 +36,14 @@ const Heading = styled.p`
 const IntroBlock = () => {
   return (
     <BlockContainer>
-      <Heading>
-        I'm Brock. I currently work at Bodybuilding.com as a full-stack
-        engineer, building APIs and user interfaces alike. I'm proficient in
-        React, Node, Mongo, and more.
+      <TextBox>
+        <p>
+          I'm Brock. I currently work at Bodybuilding.com as a full-stack
+          engineer, building APIs and user interfaces alike. I'm proficient in
+          React, Node, Mongo, and more.
+        </p>
         <p>Great to meet you.</p>
-      </Heading>
+      </TextBox>
     </BlockContainer>
   );
 };
